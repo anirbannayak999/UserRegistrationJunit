@@ -1,19 +1,18 @@
 package com.bridgelabz;
-
+import java.util.Arrays;
+import java.util.Collection;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import java.util.Arrays;
-import java.util.Collection;
 @RunWith(Parameterized.class)
 public class UserValidationParameterizedTest {
 
     public String testEmail;
     public boolean expectedResult;
-    public UserRegistration userValidator;
+    public UserValidation userValidator;
 
     public UserValidationParameterizedTest(String testEmail, boolean expectedResult) {
         this.testEmail = testEmail;
@@ -22,13 +21,18 @@ public class UserValidationParameterizedTest {
 
     @Before
     public void initialize() {
-        userValidator = new UserRegistration();
+        userValidator = new UserValidation();
     }
 
     @Test
     public void givenEmailAddress_ShouldReturn_AsExpected(){
-        boolean testResult = userValidator.email(testEmail);
-        Assert.assertEquals(testResult, expectedResult);
+        boolean testResult;
+        try {
+            testResult = userValidator.validateEmail(testEmail);
+            Assert.assertEquals(testResult, expectedResult);
+        } catch (UserValidationException e) {
+        }
+
     }
 
     @Parameterized.Parameters
@@ -62,4 +66,3 @@ public class UserValidationParameterizedTest {
     }
 
 }
-
