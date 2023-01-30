@@ -8,31 +8,31 @@ public class UserRegistrationTest {
 
     @Test
     public void givenFirstName_WhenValid_ShouldReturnTrue() {
-        boolean result = UserRegistration.firstName("Anirbankl");
+        boolean result = UserRegistration.firstName("Anirbanklsd");
         Assert.assertEquals(true, result);
     }
 
     @Test
     public void givenFirstName_WhenInvalid_ShouldReturnFalse() {
-        boolean result = UserRegistration.firstName("anirbankl");
+        boolean result = UserRegistration.firstName("anirbanklsd");
         Assert.assertEquals(false, result);
     }
 
     @Test
     public void givenLastName_Whenvalid_ShouldReturnTrue() {
-        boolean result = UserRegistration.lastName("Nayak");
+        boolean result = UserRegistration.lastName("Nayaks");
         Assert.assertEquals(true, result);
     }
 
     @Test
     public void givenLastName_WhenInvalid_ShouldReturnFalse() {
-        boolean result = UserRegistration.lastName("nayakhd");
+        boolean result = UserRegistration.lastName("nayakhds");
         Assert.assertEquals(false, result);
     }
 
     @Test
     public void givenEmail_WhenValid_ShouldReturnTrue() {
-        boolean result = UserRegistration.email("anirbankl@gmail.com.in");
+        boolean result = UserRegistration.email("anirbasnkl@gmail.com.in");
         Assert.assertEquals(true, result);
     }
 
